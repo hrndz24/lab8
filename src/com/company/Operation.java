@@ -20,6 +20,15 @@ public class Operation {
         }
     }
 
+    public boolean contains(String string) {
+        for (String element : arrayList) {
+            if (element.contains(string)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void printSortedElementsLengths() {
         List<Integer> lengths = new ArrayList<>();
         arrayList.forEach(element -> lengths.add(element.length()));
