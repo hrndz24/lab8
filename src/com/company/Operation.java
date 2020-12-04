@@ -1,6 +1,8 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Operation {
 
@@ -16,6 +18,13 @@ public class Operation {
         } else {
             arrayList.add(element);
         }
+    }
+
+    public void printSortedElementsLengths() {
+        List<Integer> lengths = new ArrayList<>();
+        arrayList.forEach(element -> lengths.add(element.length()));
+        Collections.sort(lengths);
+        System.out.println(lengths);
     }
 
     public ArrayList<String> getElements() {
