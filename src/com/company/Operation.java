@@ -4,13 +4,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Operation {
+public class Operation extends ArrayList<String> {
 
     private static final int CAPACITY = 3;
     private int pointer = 0;
     private ArrayList<String> arrayList = new ArrayList<>(CAPACITY);
 
-    public void addElement(String element) {
+    @Override
+    public boolean add(String element) {
         if (arrayList.size() == CAPACITY) {
             arrayList.remove(pointer);
             arrayList.add(pointer, element);
@@ -18,6 +19,13 @@ public class Operation {
         } else {
             arrayList.add(element);
         }
+        return true;
+    }
+
+    public boolean compareInnerObjects(int firstIndex, int secondIndex) {
+        String first = arrayList.get(firstIndex);
+        String second = arrayList.get(secondIndex);
+        return first.equals(second);
     }
 
     public boolean contains(String string) {
