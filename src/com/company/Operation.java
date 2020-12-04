@@ -20,6 +20,14 @@ public class Operation {
         }
     }
 
+    public List<String> getReversedElements() {
+        List<String> reversed = new ArrayList<>();
+        arrayList.forEach(element -> {
+            reversed.add(new StringBuilder(element).reverse().toString());
+        });
+        return reversed;
+    }
+
     public void printSortedElementsLengths() {
         List<Integer> lengths = new ArrayList<>();
         arrayList.forEach(element -> lengths.add(element.length()));
