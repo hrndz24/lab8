@@ -1,8 +1,6 @@
 package com.company;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Operation {
 
@@ -26,6 +24,23 @@ public class Operation {
             reversed.add(new StringBuilder(element).reverse().toString());
         });
         return reversed;
+    }
+
+    public Map<String, Map<Character, Integer>> getCharacterStatistics() {
+        Map<String, Map<Character, Integer>> statistics = new HashMap<>();
+        arrayList.forEach(element -> {
+            Map<Character, Integer> map = new HashMap<>();
+            for (char c : element.toCharArray()) {
+                if (map.containsKey(c)) {
+                    int value = map.get(c);
+                    map.replace(c, ++value);
+                } else {
+                    map.put(c, 1);
+                }
+            }
+            statistics.put(element, map);
+        });
+        return statistics;
     }
 
     public void printSortedElementsLengths() {

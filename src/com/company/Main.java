@@ -14,5 +14,7 @@ public class Main {
         operation.printSortedElementsLengths();
 
         System.out.println(operation.getReversedElements());
+
+        System.out.println(operation.getCharacterStatistics());
     }
 }
