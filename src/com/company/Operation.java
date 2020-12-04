@@ -1,8 +1,6 @@
 package com.company;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Operation {
 
@@ -18,6 +16,19 @@ public class Operation {
         } else {
             arrayList.add(element);
         }
+    }
+
+    public Map<String, Integer> getRepeatedElements() {
+        Map<String, Integer> map = new HashMap<>();
+        arrayList.forEach(element -> {
+            if (map.containsKey(element)) {
+                int value = map.get(element);
+                map.replace(element, ++value);
+            } else {
+                map.put(element, 1);
+            }
+        });
+        return map;
     }
 
     public void printSortedElementsLengths() {
